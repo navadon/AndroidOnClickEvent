@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,9 +28,16 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     // onClick is public!?!?
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.btn_next:
+                next();
+                break;
+            case R.id.btn_prev:
+                prev();
                 break;
         }
         hideKeyboardInput(v);
@@ -44,11 +52,28 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_next).setOnClickListener(this);
+        findViewById(R.id.btn_prev).setOnClickListener(this);
     }
 
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+
+    private void next()
+    {
+        Intent intent;
+        intent = new Intent(Option3Activity.this,Option4Activity.class);
+        startActivity(intent);
+
+    }
+
+    private void prev()
+    {
+        Intent intent;
+        intent = new Intent(Option3Activity.this,Option2Activity.class);
+        startActivity(intent);
     }
 
     // To hide Android soft keyboard
