@@ -8,7 +8,7 @@ tools:context="com.example.navadroid.androidonclickevent.Option2Activity"
 android:orientation="vertical"
 android:padding="@dimen/large_spacing">
 
-<TextView
+    <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
@@ -42,5 +42,25 @@ android:padding="@dimen/large_spacing">
     android:text="@string/tv_output_init"
     android:textAppearance="@style/text_title"
     android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/next2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next" />
+
+    </LinearLayout>
 
 </LinearLayout>
