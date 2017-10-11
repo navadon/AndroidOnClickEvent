@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,15 @@ public class Option0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
+
+        Button next_btn = (Button)findViewById(R.id.next_button0);
+
+        next_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Option0Activity.this , Option1Activity.class));
+            }
+        });
     }
 
     // To bind views to this activity
@@ -43,6 +53,7 @@ public class Option0Activity extends AppCompatActivity {
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
+
 
     // To hide Android soft keyboard
     private void hideKeyboardInput(View v){

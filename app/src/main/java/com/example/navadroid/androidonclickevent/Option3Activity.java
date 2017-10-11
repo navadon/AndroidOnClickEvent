@@ -1,10 +1,12 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,6 +23,24 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_option3);
         bindView();
         initView();
+
+        Button back_btn = (Button)findViewById(R.id.back3);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Option3Activity.this , Option2Activity.class));
+            }
+        });
+
+        Button next_btn = (Button)findViewById(R.id.next3);
+
+        next_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Option3Activity.this , Option4Activity.class));
+            }
+        });
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
