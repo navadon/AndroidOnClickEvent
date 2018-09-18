@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: XML onClick attribute via View object
+// TODO: XML onClick attribute and selecting view by comparing object
 public class Option0Activity extends AppCompatActivity {
 
     private EditText etInput;

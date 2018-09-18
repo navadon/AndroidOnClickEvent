@@ -8,7 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: XML onClick attribute via View id
+// TODO: Using XML onClick attribute and selecting view via id
 public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;

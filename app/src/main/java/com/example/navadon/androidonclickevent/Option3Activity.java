@@ -8,7 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: Implementing View.OnClickListener to Activity
+// TODO: Implementing View.OnClickListener to Activity and selecting view via id
 // This activity is implementing "View.OnClickListener" interface, so "onClick" method must be overridden.
 
 public class Option3Activity extends AppCompatActivity implements View.OnClickListener {

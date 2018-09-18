@@ -8,7 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: View.OnClickListener as inner class
+// TODO: View.OnClickListener as inner class and selecting view via id
 
 public class Option5Activity extends AppCompatActivity {
 
