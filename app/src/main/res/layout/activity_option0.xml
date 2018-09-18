@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.navadroid.androidonclickevent.Option1Activity"
     android:orientation="vertical"
     android:padding="@dimen/large_spacing">
 
@@ -43,25 +42,5 @@
         android:text="@string/tv_output_init"
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0">
-        <Button
-            android:id="@+id/btn_prev"
-            android:layout_width="173dp"
-            android:layout_height="wrap_content"
-            android:text="prev"
-            android:onClick="process"
-            android:layout_gravity="left"/>
-
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="next"
-            android:onClick="process"
-            android:layout_gravity="right"/>
-    </LinearLayout>
 
 </LinearLayout>
