@@ -15,4 +15,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_loop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:onClick="onLoopClick"
+        android:text="To Option loop"
+        android:layout_marginBottom="@dimen/small_spacing"
+        tools:ignore="OnClick" />
+
 </android.support.constraint.ConstraintLayout>
