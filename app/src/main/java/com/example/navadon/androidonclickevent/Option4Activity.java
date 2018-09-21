@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +16,9 @@ public class Option4Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private View.OnClickListener onClickListener;
+    private Button btnNext;
+    private Button btnPrev;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +31,17 @@ public class Option4Activity extends AppCompatActivity {
     private void bindView() {
         etInput = findViewById(R.id.et_input_4);
         tvOutput = findViewById(R.id.tv_body_4);
+        //btn pre - next
+        btnNext = findViewById(R.id.btn_next);
+        btnPrev = findViewById(R.id.btn_prev);
     }
 
     private void initView(){
         initOnClickListener();
         // To register click event to view
         findViewById(R.id.btn_process_4).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_next).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_prev).setOnClickListener(onClickListener);
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
@@ -43,6 +53,14 @@ public class Option4Activity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.btn_process_4:
                         greet();
+                        break;
+                    case R.id.btn_next:
+                        intent =  new Intent(Option4Activity.this,Option5Activity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.btn_prev:
+                        intent = new Intent(Option4Activity.this,Option3Activity.class);
+                        startActivity(intent);
                         break;
                 }
                 hideKeyboardInput(v);
