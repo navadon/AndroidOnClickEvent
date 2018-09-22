@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,6 +17,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private EditText etInput;
     private TextView tvOutput;
+    private Button btnNext;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +26,31 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_option3);
         bindView();
         initView();
+        onClick();
+    }
+
+    private void onClick() {
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Option3Activity.this,Option4Activity.class);
+                startActivity(intent);
+            }
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     // To bind views to this activity
     private void bindView(){
         etInput = findViewById(R.id.et_input_3);
         tvOutput = findViewById(R.id.tv_body_3);
+        btnNext = findViewById(R.id.btn_next);
+        btnBack = findViewById(R.id.btn_back);
     }
 
     private void initView(){
