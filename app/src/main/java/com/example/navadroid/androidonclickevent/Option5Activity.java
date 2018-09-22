@@ -1,15 +1,16 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: View.OnClickListener as inner class and selecting view via id
-
+// TODO: View.OnClickListener as inner class
 public class Option5Activity extends AppCompatActivity {
 
     private EditText etInput;
@@ -21,12 +22,27 @@ public class Option5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option5);
         bindView();
         initView();
+
+        final Button nextButton = (Button) findViewById(R.id.nextButton);
+        final Button prevButton = (Button) findViewById(R.id.prevButton);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option5Activity.this, Option0Activity.class));
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option5Activity.this, Option4Activity.class));
+            }
+        });
     }
 
     // To bind views to this activity
     private void bindView(){
-        etInput = findViewById(R.id.et_input_5);
-        tvOutput = findViewById(R.id.tv_body_5);
+        etInput = (EditText) findViewById(R.id.et_input_5);
+        tvOutput = (TextView) findViewById(R.id.tv_body_5);
     }
 
     private void initView(){
