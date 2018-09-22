@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,21 @@ public class Option0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
+
+        final Button nextButton = findViewById(R.id.nextButton);
+        final Button prevButton = findViewById(R.id.prevButton);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option0Activity.this, Option1Activity.class));
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option0Activity.this, MainActivity.class));
+            }
+        });
     }
 
     private void bindView() {
