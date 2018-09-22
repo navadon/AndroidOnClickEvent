@@ -43,4 +43,28 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_size"
+            android:layout_marginBottom="@dimen/small_spacing"
+            android:layout_weight="0.5"
+            android:onClick="Back"
+            android:text="back" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_target_size"
+            android:layout_marginBottom="@dimen/small_spacing"
+            android:layout_weight="0.5"
+            android:onClick="Next"
+            android:text="next" />
+    </LinearLayout>
+
 </LinearLayout>
