@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,5 +58,15 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
+    public void Back(View view) {
+        Intent intent = new Intent(this, Option2Activity.class);
+        startActivity(intent);
+        finish();
+    }
 
+    public void Next(View view) {
+        Intent intent = new Intent(this, Option4Activity.class);
+        startActivity(intent);
+        finish();
+    }
 }
