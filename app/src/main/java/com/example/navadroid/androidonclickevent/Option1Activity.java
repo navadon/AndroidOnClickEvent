@@ -1,14 +1,16 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: Using XML onClick attribute and selecting view via id
+// TODO: XML onClick attribute & View id
 public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;
@@ -19,11 +21,27 @@ public class Option1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option1);
         bindView();
+
+        final Button nextButton = (Button) findViewById(R.id.nextButton);
+        final Button prevButton = (Button) findViewById(R.id.prevButton);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option1Activity.this, Option2Activity.class));
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option1Activity.this, Option0Activity.class));
+            }
+        });
     }
 
-    private void bindView() {
-        etInput = findViewById(R.id.et_input_1);
-        tvOutput = findViewById(R.id.tv_body_1);
+    // To bind views to this activity
+    private void bindView(){
+        etInput = (EditText) findViewById(R.id.et_input_1);
+        tvOutput = (TextView) findViewById(R.id.tv_body_1);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""

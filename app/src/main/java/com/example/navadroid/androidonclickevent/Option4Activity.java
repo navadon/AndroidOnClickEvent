@@ -1,14 +1,16 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: Adding View.OnClickListener as class field and selecting view via id
+// TODO: View.OnClickListener as class attribute
 public class Option4Activity extends AppCompatActivity {
 
     private EditText etInput;
@@ -21,11 +23,27 @@ public class Option4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option4);
         bindView();
         initView();
+
+        final Button nextButton = (Button) findViewById(R.id.nextButton);
+        final Button prevButton = (Button) findViewById(R.id.prevButton);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option4Activity.this, Option5Activity.class));
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option4Activity.this, Option3Activity.class));
+            }
+        });
     }
 
-    private void bindView() {
-        etInput = findViewById(R.id.et_input_4);
-        tvOutput = findViewById(R.id.tv_body_4);
+    // To bind views to this activity
+    private void bindView(){
+        etInput = (EditText) findViewById(R.id.et_input_4);
+        tvOutput = (TextView) findViewById(R.id.tv_body_4);
     }
 
     private void initView(){
@@ -36,7 +54,6 @@ public class Option4Activity extends AppCompatActivity {
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
     private void initOnClickListener(){
-        // Only one OnclickListener is created to handle all onClick events.
         onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,4 +78,3 @@ public class Option4Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 }
-

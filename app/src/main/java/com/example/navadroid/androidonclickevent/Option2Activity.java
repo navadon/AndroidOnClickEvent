@@ -1,18 +1,21 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: setOnClickListener to each view (use anonymous object of OnClickListener)
+// TODO: setOnClickListener to each view
 public class Option2Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
+//    private Button btnProcess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +23,30 @@ public class Option2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option2);
         bindView();
         initView();
+
+        final Button nextButton = (Button) findViewById(R.id.nextButton);
+        final Button prevButton = (Button) findViewById(R.id.prevButton);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option2Activity.this, Option3Activity.class));
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option2Activity.this, Option1Activity.class));
+            }
+        });
     }
 
-    private void bindView() {
-        etInput = findViewById(R.id.et_input_2);
-        tvOutput = findViewById(R.id.tv_body_2);
+    // To bind views to this activity
+    private void bindView(){
+        etInput = (EditText) findViewById(R.id.et_input_2);
+        tvOutput = (TextView) findViewById(R.id.tv_body_2);
     }
 
-    // To set onClickListener to "each" view (and use anonymous OnClickListener individually)
+    // To set onClickListener to "each" view
     // You don't have to bind any function to "android:onClick" in layout XML file.
     // However, this will cause adding too many instructions to activity's "onCreate" method.
     private void initView(){
@@ -51,3 +70,4 @@ public class Option2Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 }
+

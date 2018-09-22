@@ -1,6 +1,7 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: XML onClick attribute and selecting view by comparing object
+// TODO: XML onClick attribute & View object
 public class Option0Activity extends AppCompatActivity {
 
     private EditText etInput;
@@ -21,12 +22,28 @@ public class Option0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
+
+        final Button nextButton = (Button) findViewById(R.id.nextButton);
+        final Button prevButton = (Button) findViewById(R.id.prevButton);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option0Activity.this, Option1Activity.class));
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option0Activity.this, MainActivity.class));
+            }
+        });
     }
 
-    private void bindView() {
-        etInput = findViewById(R.id.et_input_0);
-        tvOutput = findViewById(R.id.tv_body_0);
-        btnProcess = findViewById(R.id.btn_process_0);
+    // To bind views to this activity
+    private void bindView(){
+        etInput = (EditText) findViewById(R.id.et_input_0);
+        tvOutput = (TextView) findViewById(R.id.tv_body_0);
+        btnProcess = (Button) findViewById(R.id.btn_process_0);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
