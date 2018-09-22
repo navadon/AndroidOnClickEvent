@@ -42,4 +42,17 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
 
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Zero Page" />
+
+    <Button
+        android:id="@+id/prevButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prev" />
+
+
 </LinearLayout>
