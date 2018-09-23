@@ -1,19 +1,22 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: Implementing View.OnClickListener
+// TODO: Implementing View.OnClickListener to Activity and selecting view via id
 // This activity is implementing "View.OnClickListener" interface, so "onClick" method must be overridden.
+
 public class Option3Activity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText etInput;
     private TextView tvOutput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,27 +26,46 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         initView();
     }
 
-    // You don't have to bind any functions to "android:onClick" in layout XML file.
-    // onClick is public!?!?
+    // To bind views to this activity
+    private void bindView(){
+        etInput = findViewById(R.id.et_input_3);
+        tvOutput = findViewById(R.id.tv_body_3);
+
+    }
+
+    private void initView(){
+        // To register click event to view
+        findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_previous3).setOnClickListener(this);
+        findViewById(R.id.btn_next3).setOnClickListener(this);
+    }
+
+    // This onClick method is overridden from "View.OnClickListener".
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
                 break;
+            case R.id.btn_previous3:
+                previousActivity();
+                break;
+            case R.id.btn_next3:
+                nextActivity();
+                break;
         }
         hideKeyboardInput(v);
     }
 
-    // To bind views to this activity
-    private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_3);
-        tvOutput = (TextView) findViewById(R.id.tv_body_3);
+
+    private void previousActivity() {
+        Intent intent = new Intent(getApplicationContext(),Option2Activity.class);
+        startActivity(intent);
     }
 
-    private void initView(){
-        // To register click event to view
-        findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+    private void nextActivity() {
+        Intent intent = new Intent(getApplicationContext(),Option4Activity.class);
+        startActivity(intent);
     }
 
     // To greet the user
@@ -56,6 +78,5 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
+
 }
-
-
