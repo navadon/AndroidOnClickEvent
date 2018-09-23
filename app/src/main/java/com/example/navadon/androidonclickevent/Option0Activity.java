@@ -47,5 +47,6 @@ public class Option0Activity extends AppCompatActivity {
     private void hideKeyboardInput(View v){
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        //GG555inwza007
     }
 }
