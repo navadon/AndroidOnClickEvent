@@ -40,6 +40,12 @@ public class Option0Activity extends AppCompatActivity {
         // Do we really need to compare view objects?
         if (v == btnProcess) {
             greet();
+        }else if (v == btnBack) {
+            Intent intent = new Intent( this, Option5Activity.class);
+            startActivity(intent);
+        }else if (v == btnNext) {
+            Intent intent = new Intent( this, Option1Activity.class);
+            startActivity(intent);
         }
         hideKeyboardInput(v);
     }
@@ -55,19 +61,5 @@ public class Option0Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
-    public void goBack(View view){
-        if (view == btnBack) {
-            Intent intent = new Intent( this, Option5Activity.class);
-            startActivity(intent);
-        }
 
-    }
-
-    public void goNext(View view){
-        if (view == btnNext) {
-            Intent intent = new Intent( this, Option1Activity.class);
-            startActivity(intent);
-        }
-
-    }
 }
