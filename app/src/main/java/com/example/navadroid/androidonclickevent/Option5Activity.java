@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,24 +24,33 @@ public class Option5Activity extends AppCompatActivity {
     }
 
     // To bind views to this activity
-    private void bindView(){
+    private void bindView() {
         etInput = (EditText) findViewById(R.id.et_input_5);
         tvOutput = (TextView) findViewById(R.id.tv_body_5);
     }
 
-    private void initView(){
+    private void initView() {
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+
+        findViewById(R.id.back5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.next5).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
     // It is private from other android class since it is within the Activity.
-    class InnerOnClickListener implements View.OnClickListener{
+    class InnerOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_process_5:
                     greet();
+                    break;
+                case R.id.back5:
+                    startOption4();
+                    break;
+                case R.id.next5:
+                    startOption0();
                     break;
             }
             hideKeyboardInput(v);
@@ -48,12 +58,22 @@ public class Option5Activity extends AppCompatActivity {
     }
 
     // To greet the user
-    private void greet(){
+    private void greet() {
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
 
+    private void startOption4() {
+        startActivity(new Intent(this, Option4Activity.class));
+        finish();
+    }
+
+    private void startOption0() {
+        startActivity(new Intent(this, Option0Activity.class));
+        finish();
+    }
+
     // To hide Android soft keyboard
-    private void hideKeyboardInput(View v){
+    private void hideKeyboardInput(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
