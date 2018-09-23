@@ -43,4 +43,27 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/touch_target_size"
+            android:onClick="next"
+            android:text="@string/next"
+            android:layout_marginBottom="@dimen/small_spacing"
+            android:layout_alignParentEnd="true"/>
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/touch_target_size"
+            android:onClick="back"
+            android:text="@string/back"
+            android:layout_marginBottom="@dimen/small_spacing" />
+
+    </RelativeLayout>
+
 </LinearLayout>
