@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,28 +32,47 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_process_3:
                 greet();
                 break;
+            case R.id.back3:
+                startOption2();
+                break;
+            case R.id.next3:
+                startOption4();
+                break;
         }
         hideKeyboardInput(v);
     }
 
     // To bind views to this activity
-    private void bindView(){
+    private void bindView() {
         etInput = (EditText) findViewById(R.id.et_input_3);
         tvOutput = (TextView) findViewById(R.id.tv_body_3);
     }
 
-    private void initView(){
+    private void initView() {
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+
+        findViewById(R.id.back3).setOnClickListener(this);
+        findViewById(R.id.next3).setOnClickListener(this);
     }
 
     // To greet the user
-    private void greet(){
+    private void greet() {
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
 
+    private void startOption2() {
+        startActivity(new Intent(this, Option2Activity.class));
+        finish();
+    }
+
+    private void startOption4() {
+        startActivity(new Intent(this, Option4Activity.class));
+        finish();
+    }
+
     // To hide Android soft keyboard
-    private void hideKeyboardInput(View v){
+    private void hideKeyboardInput(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
