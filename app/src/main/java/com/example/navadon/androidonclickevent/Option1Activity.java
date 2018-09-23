@@ -38,12 +38,12 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_process_1) {
             greet();
         }
-        if (v == btnNext){
+        if (v.getId() == R.id.btn_next){
             Intent intent = new Intent(this,Option2Activity.class);
             startActivity(intent);
         }
-        if (v == btnPrev){
-            Intent intent = new Intent(this,Option1Activity.class);
+        if (v.getId() == R.id.btn_prev){
+            Intent intent = new Intent(this,Option0Activity.class);
             startActivity(intent);
         }
         hideKeyboardInput(v);
