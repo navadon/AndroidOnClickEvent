@@ -21,21 +21,6 @@ public class Option1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option1);
         bindView();
-
-        final Button nextButton = findViewById(R.id.nextButton);
-        final Button prevButton = findViewById(R.id.prevButton);
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option1Activity.this, Option2Activity.class));
-            }
-        });
-
-        prevButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option1Activity.this, Option0Activity.class));
-            }
-        });
     }
 
     private void bindView() {
@@ -48,12 +33,26 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_process_1) {
             greet();
         }
+        if(v.getId() == R.id.btnNext){
+            goNext();
+        }
+        if(v.getId() == R.id.btnPrev){
+            goPrev();
+        }
         hideKeyboardInput(v);
     }
 
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+
+    private void goNext(){
+        startActivity(new Intent(this, Option2Activity.class));
+    }
+
+    private  void goPrev(){
+        startActivity(new Intent(this, Option0Activity.class));
     }
 
     // To hide Android soft keyboard

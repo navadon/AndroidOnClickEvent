@@ -16,33 +16,22 @@ public class Option0Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private Button btnProcess;
+    private Button btnNext;
+    private Button btnPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
-
-        final Button nextButton = findViewById(R.id.nextButton);
-        final Button prevButton = findViewById(R.id.prevButton);
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option0Activity.this, Option1Activity.class));
-            }
-        });
-
-        prevButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option0Activity.this, MainActivity.class));
-            }
-        });
     }
 
     private void bindView() {
         etInput = findViewById(R.id.et_input_0);
         tvOutput = findViewById(R.id.tv_body_0);
         btnProcess = findViewById(R.id.btn_process_0);
+        btnNext = findViewById(R.id.btnNext);
+        btnPrev = findViewById(R.id.btnPrev);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -51,12 +40,26 @@ public class Option0Activity extends AppCompatActivity {
         if (v == btnProcess) {
             greet();
         }
+        if (v == btnNext){
+            goNext();
+        }
+        if (v == btnPrev){
+            goPrev();
+        }
         hideKeyboardInput(v);
     }
 
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+
+    private void goNext(){
+        startActivity(new Intent(this, Option1Activity.class));
+    }
+
+    private void goPrev(){
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     // To hide Android soft keyboard

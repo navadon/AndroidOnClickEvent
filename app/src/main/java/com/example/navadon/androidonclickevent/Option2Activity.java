@@ -22,21 +22,6 @@ public class Option2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option2);
         bindView();
         initView();
-
-        final Button nextButton = findViewById(R.id.nextButton);
-        final Button prevButton = findViewById(R.id.prevButton);
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option2Activity.this, Option3Activity.class));
-            }
-        });
-
-        prevButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option2Activity.this, Option1Activity.class));
-            }
-        });
     }
 
     private void bindView() {
@@ -53,6 +38,21 @@ public class Option2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 greet();
                 hideKeyboardInput(v);
+            }
+        });
+
+        final Button btnNext = findViewById(R.id.btnNext);
+        final Button btnPrev = findViewById(R.id.btnPrev);
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option2Activity.this, Option3Activity.class));
+            }
+        });
+
+        btnPrev.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(Option2Activity.this, Option1Activity.class));
             }
         });
     }

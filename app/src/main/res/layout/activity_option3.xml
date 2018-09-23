@@ -43,13 +43,13 @@
         android:background="@color/colorAccent"/>
 
     <Button
-        android:id="@+id/nextButton"
+        android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next" />
 
     <Button
-        android:id="@+id/prevButton"
+        android:id="@+id/btnPrev"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Prev" />

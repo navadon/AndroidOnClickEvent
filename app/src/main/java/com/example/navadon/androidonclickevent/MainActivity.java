@@ -8,17 +8,29 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private Button btnNext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final Button button = findViewById(R.id.nextButton);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Option0Activity.class));
-            }
-        });
+        bindView();
     }
+
+    private void bindView() {
+        btnNext = findViewById(R.id.btnNext);
+    }
+
+    public void process(View v) {
+        // Do we really need to compare view objects?
+        if (v == btnNext) {
+            goNext();
+        }
+    }
+
+    private void goNext(){
+        startActivity(new Intent(this, Option0Activity.class));
+    }
+
+
 }

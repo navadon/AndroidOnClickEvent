@@ -23,21 +23,6 @@ public class Option5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option5);
         bindView();
         initView();
-
-        final Button nextButton = findViewById(R.id.nextButton);
-        final Button prevButton = findViewById(R.id.prevButton);
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option5Activity.this, Option0Activity.class));
-            }
-        });
-
-        prevButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Option5Activity.this, Option4Activity.class));
-            }
-        });
     }
 
     // To bind views to this activity
@@ -49,6 +34,8 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btnNext).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btnPrev).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -60,6 +47,12 @@ public class Option5Activity extends AppCompatActivity {
                 case R.id.btn_process_5:
                     greet();
                     break;
+                case R.id.btnNext:
+                    goNext();
+                    break;
+                case R.id.btnPrev:
+                    goPrev();
+                    break;
             }
             hideKeyboardInput(v);
         }
@@ -68,6 +61,14 @@ public class Option5Activity extends AppCompatActivity {
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+
+    private void goNext(){
+        startActivity(new Intent(this,MainActivity.class));
+    }
+
+    private void goPrev(){
+        startActivity(new Intent(this,Option4Activity.class));
     }
 
     // To hide Android soft keyboard
