@@ -69,10 +69,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void next() {
         Intent x = new Intent(this, Option4Activity.class);
         startActivity(x);
+        finish();
     }
 
     private void back(){
         Intent x = new Intent(this, Option2Activity.class);
         startActivity(x);
+        finish();
     }
 }

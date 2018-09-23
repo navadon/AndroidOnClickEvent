@@ -59,6 +59,7 @@ public class Option0Activity extends AppCompatActivity {
         if(v == btnNext) {
             Intent x = new Intent(this, Option1Activity.class);
             startActivity(x);
+            finish();
         }
     }
 
@@ -66,6 +67,7 @@ public class Option0Activity extends AppCompatActivity {
         if(v == btnBack) {
             Intent x = new Intent(this, Option5Activity.class);
             startActivity(x);
+            finish();
         }
     }
 }

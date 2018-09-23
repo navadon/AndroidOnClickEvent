@@ -50,6 +50,7 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_next_1) {
             Intent x = new Intent(this, Option2Activity.class);
             startActivity(x);
+            finish();
         }
     }
 
@@ -57,6 +58,7 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_back_1) {
             Intent x = new Intent(this, Option0Activity.class);
             startActivity(x);
+            finish();
         }
     }
 }

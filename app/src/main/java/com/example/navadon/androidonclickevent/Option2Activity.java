@@ -67,10 +67,12 @@ public class Option2Activity extends AppCompatActivity {
     private void next() {
         Intent x = new Intent(this, Option3Activity.class);
         startActivity(x);
+        finish();
     }
 
     private void back(){
         Intent x = new Intent(this, Option1Activity.class);
         startActivity(x);
+        finish();
     }
 }
