@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class Option2Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
 //    private Button btnProcess;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,16 @@ public class Option2Activity extends AppCompatActivity {
     private void hideKeyboardInput(View v){
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
+
+    public void onClickBack(View view) {
+        Intent intent = new Intent(getApplicationContext(),Option1Activity.class);
+        startActivity(intent);
+    }
+
+    public void onClickNext(View view) {
+        Intent intent = new Intent(getApplicationContext(),Option3Activity.class);
+        startActivity(intent);
     }
 }
 

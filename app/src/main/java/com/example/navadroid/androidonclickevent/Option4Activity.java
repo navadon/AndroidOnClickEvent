@@ -1,10 +1,12 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +16,8 @@ public class Option4Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private View.OnClickListener onClickListener;
+    private Button next;
+    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +25,34 @@ public class Option4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option4);
         bindView();
         initView();
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),Option5Activity.class);
+                startActivity(i);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),Option3Activity.class);
+                startActivity(i);
+            }
+        });
     }
 
     // To bind views to this activity
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_4);
         tvOutput = (TextView) findViewById(R.id.tv_body_4);
+        next = (Button) findViewById(R.id.next);
+        back = (Button) findViewById(R.id.back);
     }
+
+
+
 
     private void initView(){
         initOnClickListener();
