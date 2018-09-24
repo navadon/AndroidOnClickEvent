@@ -33,6 +33,8 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.back).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.next).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -43,6 +45,16 @@ public class Option5Activity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.btn_process_5:
                     greet();
+                    break;
+                case R.id.back:
+                    Intent intent = new Intent(Option5Activity.this, Option4Activity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.next:
+                    Intent intent2 = new Intent(Option5Activity.this, Option0Activity.class);
+                    startActivity(intent2);
+                    finish();
                     break;
             }
             hideKeyboardInput(v);
@@ -60,15 +72,4 @@ public class Option5Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
-    public void Back(View view) {
-        Intent intent = new Intent(this, Option4Activity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void Next(View view) {
-        Intent intent = new Intent(this, Option0Activity.class);
-        startActivity(intent);
-        finish();
-    }
 }

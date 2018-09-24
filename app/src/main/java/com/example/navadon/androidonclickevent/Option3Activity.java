@@ -34,6 +34,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.next).setOnClickListener(this);
+        findViewById(R.id.back).setOnClickListener(this);
     }
 
     // This onClick method is overridden from "View.OnClickListener".
@@ -42,6 +44,16 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.next:
+                Intent intent = new Intent(this, Option4Activity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.back:
+                Intent intent2 = new Intent(this, Option2Activity.class);
+                startActivity(intent2);
+                finish();
                 break;
         }
         hideKeyboardInput(v);
@@ -56,17 +68,5 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void hideKeyboardInput(View v){
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-    }
-
-    public void Back(View view) {
-        Intent intent = new Intent(this, Option2Activity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void Next(View view) {
-        Intent intent = new Intent(this, Option4Activity.class);
-        startActivity(intent);
-        finish();
     }
 }

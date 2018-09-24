@@ -52,7 +52,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/touch_target_size"
             android:layout_marginBottom="@dimen/small_spacing"
-            android:onClick="Back"
             android:layout_weight="0.5"
             android:text="back" />
 
@@ -62,7 +61,6 @@
             android:layout_height="@dimen/touch_target_size"
             android:layout_marginBottom="@dimen/small_spacing"
             android:layout_weight="0.5"
-            android:onClick="Next"
             android:text="next" />
 
     </LinearLayout>

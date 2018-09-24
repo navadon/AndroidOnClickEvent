@@ -47,14 +47,18 @@ public class Option1Activity extends AppCompatActivity {
     }
 
     public void Back(View view) {
-        Intent intent = new Intent(this, Option0Activity.class);
-        startActivity(intent);
-        finish();
+        if(view.getId() == R.id.back) {
+            Intent intent = new Intent(this, Option0Activity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void Next(View view) {
-        Intent intent = new Intent(this, Option2Activity.class);
-        startActivity(intent);
-        finish();
+        if(view.getId() == R.id.next) {
+            Intent intent = new Intent(this, Option2Activity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
