@@ -1,10 +1,12 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,6 +15,8 @@ public class Option4Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
+    private Button button_next;
+    private Button button_back;
     private View.OnClickListener onClickListener;
 
     @Override
@@ -33,6 +37,8 @@ public class Option4Activity extends AppCompatActivity {
         initOnClickListener();
         // To register click event to view
         findViewById(R.id.btn_process_4).setOnClickListener(onClickListener);
+        findViewById(R.id.button_next).setOnClickListener(onClickListener);
+        findViewById(R.id.button_back).setOnClickListener(onClickListener);
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
@@ -44,10 +50,27 @@ public class Option4Activity extends AppCompatActivity {
                     case R.id.btn_process_4:
                         greet();
                         break;
+                    case R.id.button_next:
+                        next();
+                        break;
+                    case R.id.button_back:
+                        back();
+                        break;
                 }
                 hideKeyboardInput(v);
             }
         };
+    }
+
+    public void next() {
+        Intent intent = new Intent(this,Option5Activity.class);
+        startActivity(intent);
+
+    }
+    public void back() {
+        Intent intent = new Intent(this,Option3Activity.class);
+        startActivity(intent);
+
     }
 
     // To greet the user

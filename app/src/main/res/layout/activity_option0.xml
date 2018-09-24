@@ -34,6 +34,7 @@
         android:text="@string/process"
         android:layout_marginBottom="@dimen/small_spacing" />
 
+
     <TextView
         android:id="@+id/tv_body_0"
         android:layout_width="match_parent"
@@ -43,5 +44,19 @@
         android:text="@string/tv_output_init"
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="process"
+        android:text="Next" />
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="process"
+        android:text="BACK" />
 
 </LinearLayout>
