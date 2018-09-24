@@ -15,7 +15,7 @@ public class Option5Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button btnPrev;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +24,6 @@ public class Option5Activity extends AppCompatActivity {
         bindView();
         initView();
 
-        btnPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PrevActivity();
-            }
-        });
     }
 
     private void PrevActivity() {
@@ -40,12 +34,13 @@ public class Option5Activity extends AppCompatActivity {
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_5);
         tvOutput = (TextView) findViewById(R.id.tv_body_5);
-        btnPrev = (Button) findViewById(R.id.button_prev);
+
     }
 
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.button_prev).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -56,6 +51,9 @@ public class Option5Activity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.btn_process_5:
                     greet();
+                    break;
+                case R.id.button_prev:
+                    PrevActivity();
                     break;
             }
             hideKeyboardInput(v);
