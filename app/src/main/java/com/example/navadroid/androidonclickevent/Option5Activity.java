@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+//test
 // TODO: View.OnClickListener as inner class
 public class Option5Activity extends AppCompatActivity {
 
