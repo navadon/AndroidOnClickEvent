@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.example.navadroid.androidonclickevent.Option4Activity"
     android:orientation="vertical"
     android:padding="@dimen/large_spacing">
 
@@ -41,5 +42,12 @@
         android:text="@string/tv_output_init"
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/btn_next4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GotoOption5"
+        android:textAllCaps="false" />
 
 </LinearLayout>
