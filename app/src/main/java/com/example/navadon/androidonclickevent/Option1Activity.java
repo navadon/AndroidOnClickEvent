@@ -32,6 +32,16 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_process_1) {
             greet();
         }
+        else if(v.getId() == R.id.back) {
+            Intent intent = new Intent(this, Option0Activity.class);
+            startActivity(intent);
+            finish();
+        }
+        else if(v.getId() == R.id.next) {
+            Intent intent = new Intent(this, Option2Activity.class);
+            startActivity(intent);
+            finish();
+        }
         hideKeyboardInput(v);
     }
 
@@ -46,19 +56,4 @@ public class Option1Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
-    public void Back(View view) {
-        if(view.getId() == R.id.back) {
-            Intent intent = new Intent(this, Option0Activity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-
-    public void Next(View view) {
-        if(view.getId() == R.id.next) {
-            Intent intent = new Intent(this, Option2Activity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
 }
