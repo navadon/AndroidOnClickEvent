@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ public class Option2Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
 //    private Button btnProcess;
+private Button btnPrev;
+    private Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +25,34 @@ public class Option2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option2);
         bindView();
         initView();
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NextActivity();
+            }
+        });
+        btnPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PrevActivity();
+            }
+        });
     }
 
+    private void NextActivity() {
+        Intent intent = new Intent(this,Option3Activity.class);
+        startActivity(intent);
+    }
+    private void PrevActivity() {
+        Intent intent = new Intent(this,Option1Activity.class);
+        startActivity(intent);
+    }
     // To bind views to this activity
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_2);
         tvOutput = (TextView) findViewById(R.id.tv_body_2);
+        btnNext = (Button) findViewById(R.id.button_next);
+        btnPrev = (Button) findViewById(R.id.button_prev);
     }
 
     // To set onClickListener to "each" view

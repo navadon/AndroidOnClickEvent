@@ -1,10 +1,12 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ public class Option5Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
+    private Button btnPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +23,24 @@ public class Option5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option5);
         bindView();
         initView();
+
+        btnPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PrevActivity();
+            }
+        });
     }
 
+    private void PrevActivity() {
+        Intent intent = new Intent(this,Option4Activity.class);
+        startActivity(intent);
+    }
     // To bind views to this activity
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_5);
         tvOutput = (TextView) findViewById(R.id.tv_body_5);
+        btnPrev = (Button) findViewById(R.id.button_prev);
     }
 
     private void initView(){
