@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,16 @@ public class Option1Activity extends AppCompatActivity {
     public void process(View v) {
         if(v.getId() == R.id.btn_process_1) {
             greet();
+        }
+        if(v.getId() == R.id.btn_back_1){
+            Intent back = new Intent(Option1Activity.this, Option0Activity.class);
+            startActivity(back);
+            finish();
+        }
+        if(v.getId() == R.id.btn_next_1){
+            Intent next = new Intent(Option1Activity.this, Option2Activity.class);
+            startActivity(next);
+            finish();
         }
         hideKeyboardInput(v);
     }
