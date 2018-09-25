@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -33,6 +35,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_next3).setOnClickListener(this);
+        findViewById(R.id.btn_back3).setOnClickListener(this);
     }
 
     // This onClick method is overridden from "View.OnClickListener".
@@ -41,6 +45,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.btn_next3:
+                GoToOption4();
+                break;
+            case R.id.btn_back3:
+                GoToOption2();
                 break;
         }
         hideKeyboardInput(v);
@@ -57,5 +67,14 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
+    private void GoToOption4() {
+        Intent intent = new Intent(this, Option4Activity.class);
+        startActivity(intent);
+    }
+
+    private void GoToOption2() {
+        Intent intent = new Intent(this, Option2Activity.class);
+        startActivity(intent);
+    }
 
 }
