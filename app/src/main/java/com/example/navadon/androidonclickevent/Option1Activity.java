@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,17 @@ public class Option1Activity extends AppCompatActivity {
             greet();
         }
         hideKeyboardInput(v);
+
+        if(v.getId() == R.id.back1){
+            Intent b1 = new Intent(Option1Activity.this,Option0Activity.class);
+            startActivity(b1);
+            finish();
+        }
+        if(v.getId() == R.id.next1){
+            Intent n1 = new Intent(Option1Activity.this,Option2Activity.class);
+            startActivity(n1);
+            finish();
+        }
     }
 
     // To greet the user

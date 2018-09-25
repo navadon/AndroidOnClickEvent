@@ -33,6 +33,25 @@
         android:text="@string/process"
         android:layout_marginBottom="@dimen/small_spacing" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"> <Button
+        android:id="@+id/back0"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:onClick="process"/>
+
+        <Button
+            android:id="@+id/next0"
+            android:layout_alignParentEnd="true"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:onClick="process"/>
+    </RelativeLayout>
+
+
     <TextView
         android:id="@+id/tv_body_0"
         android:layout_width="match_parent"
