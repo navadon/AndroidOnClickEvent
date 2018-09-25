@@ -43,6 +43,21 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+            findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
+                                                           @Override
+                                                           public void onClick(View v) {
+                                                               Intent intent = new Intent(getApplicationContext(), Option3Activity.class);
+                                                               startActivity(intent);
+                                                           }
+                                                       });
+
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                 Intent intent = new Intent(getApplicationContext(),Option1Activity.class);
+                 startActivity(intent);
+              }
+         });
     }
 
     // To greet the user
@@ -56,14 +71,6 @@ public class Option2Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
-    public void onClickBack(View view) {
-        Intent intent = new Intent(getApplicationContext(),Option1Activity.class);
-        startActivity(intent);
-    }
 
-    public void onClickNext(View view) {
-        Intent intent = new Intent(getApplicationContext(),Option3Activity.class);
-        startActivity(intent);
-    }
 }
 
