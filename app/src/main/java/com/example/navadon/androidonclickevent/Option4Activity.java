@@ -17,8 +17,7 @@ public class Option4Activity extends AppCompatActivity {
     private TextView tvOutput;
     private View.OnClickListener onClickListener;
     private Intent intent;
-    private Button btnNext;
-    private Button btnPrev;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

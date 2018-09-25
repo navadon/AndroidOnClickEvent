@@ -15,9 +15,7 @@ public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button btnNext;
-    private Button btnPrev;
-    private Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +27,7 @@ public class Option1Activity extends AppCompatActivity {
     private void bindView() {
         etInput = findViewById(R.id.et_input_1);
         tvOutput = findViewById(R.id.tv_body_1);
-        btnNext = findViewById(R.id.btn_next);
-        btnPrev = findViewById(R.id.btn_prev);
+
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""

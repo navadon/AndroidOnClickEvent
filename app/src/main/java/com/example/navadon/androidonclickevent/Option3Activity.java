@@ -18,8 +18,7 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private EditText etInput;
     private TextView tvOutput;
     private Intent intent;
-    private Button btnNext;
-    private Button btnPrev;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

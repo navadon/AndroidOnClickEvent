@@ -51,7 +51,7 @@
             android:layout_width="173dp"
             android:layout_height="wrap_content"
             android:text="prev"
-            android:onClick="process"
+
             android:layout_gravity="left"/>
 
         <Button
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next"
-            android:onClick="process"
+
             android:layout_gravity="right"/>
     </LinearLayout>
 
