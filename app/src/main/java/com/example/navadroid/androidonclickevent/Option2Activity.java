@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +42,27 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+        findViewById(R.id.next2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View next2) {
+                Intent next_2 = new Intent(Option2Activity.this, Option3Activity.class);
+                startActivity(next_2);
+                finish();
+            }
+        });
+
+        findViewById(R.id.back2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View next2) {
+                Intent back_2 = new Intent(Option2Activity.this, Option1Activity.class);
+                startActivity(back_2);
+                finish();
+            }
+        });
     }
+
+
+
 
     // To greet the user
     private void greet(){
@@ -53,5 +74,6 @@ public class Option2Activity extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
+
 }
 

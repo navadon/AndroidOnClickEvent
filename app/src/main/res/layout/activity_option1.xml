@@ -44,4 +44,26 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+
+            android:id="@+id/back1"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="Back1"
+            android:onClick="Back1"/>
+
+        <Button
+            android:id="@+id/next1"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Next"
+            android:onClick="Next1"/>
+
+    </RelativeLayout>
+
 </LinearLayout>
