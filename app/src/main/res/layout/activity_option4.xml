@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="4"
+        android:text="@string/_4"
         android:textAppearance="@style/text_title"
         android:layout_marginBottom="@dimen/small_spacing"/>
 
@@ -23,7 +23,8 @@
         android:text=""
         tools:ignore="LabelFor"
         android:hint="@string/et_input_hint"
-        android:layout_marginBottom="@dimen/small_spacing" />
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:autofillHints="" tools:targetApi="o" />
 
     <Button
         android:id="@+id/btn_process_4"
@@ -31,6 +32,20 @@
         android:layout_height="@dimen/touch_target_size"
         android:text="@string/process"
         android:layout_marginBottom="@dimen/small_spacing" />
+
+    <Button
+        android:id="@+id/btn_next4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:text="@string/next" />
+
+    <Button
+        android:id="@+id/btn_back4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:text="@string/back" />
 
     <TextView
         android:id="@+id/tv_body_4"

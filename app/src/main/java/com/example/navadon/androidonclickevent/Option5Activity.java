@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -27,11 +29,15 @@ public class Option5Activity extends AppCompatActivity {
     private void bindView(){
         etInput = findViewById(R.id.et_input_5);
         tvOutput = findViewById(R.id.tv_body_5);
+
     }
 
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+
+        findViewById(R.id.btn_next5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_back5).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -42,6 +48,14 @@ public class Option5Activity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.btn_process_5:
                     greet();
+                    break;
+                case R.id.btn_next5:
+                    Intent intent0 = new Intent(Option5Activity.this, Option0Activity.class);
+                    startActivity(intent0);
+                    break;
+                case R.id.btn_back5:
+                    Intent intent4 = new Intent(Option5Activity.this, Option4Activity.class);
+                    startActivity(intent4);
                     break;
             }
             hideKeyboardInput(v);

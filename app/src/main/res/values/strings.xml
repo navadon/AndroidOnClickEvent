@@ -5,4 +5,12 @@
     <string name="greeting">Hello</string>
     <string name="et_input_hint">Type your name here</string>
     <string name="tv_output_init"></string>
+    <string name="_0">0</string>
+    <string name="next">next</string>
+    <string name="back">back</string>
+    <string name="_5">5</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
 </resources>
