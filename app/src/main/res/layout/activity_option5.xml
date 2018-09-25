@@ -46,8 +46,15 @@
     <Button
         android:id="@+id/btn_next5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:text="GotoOption0"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_back5"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:text="GotoOption4"
         android:textAllCaps="false" />
 
 </LinearLayout>

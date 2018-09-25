@@ -46,8 +46,15 @@ android:padding="@dimen/large_spacing">
     <Button
         android:id="@+id/btn_next2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="71dp"
         android:text="GotoOption3"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_back2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="GotoOption1"
         android:textAllCaps="false" />
 
 </LinearLayout>

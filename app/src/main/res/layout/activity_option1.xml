@@ -47,9 +47,17 @@
     <Button
         android:id="@+id/btn_next1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="66dp"
         android:onClick="process"
         android:text="GotoOption2"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_back1"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:onClick="process"
+        android:text="GotoOption0"
         android:textAllCaps="false" />
 
 </LinearLayout>
