@@ -5,6 +5,4 @@
     <string name="greeting">Hello</string>
     <string name="et_input_hint">Type your name here</string>
     <string name="tv_output_init"></string>
-    <string name="bck">Back</string>
-    <string name="nxt">Next</string>
 </resources>

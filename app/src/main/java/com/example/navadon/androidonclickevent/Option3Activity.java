@@ -1,7 +1,6 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,14 +16,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private EditText etInput;
     private TextView tvOutput;
 
-    private Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option3);
         bindView();
-//        initView();
+        initView();
     }
 
     // To bind views to this activity
@@ -33,20 +30,20 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         tvOutput = findViewById(R.id.tv_body_3);
     }
 
-//    private void initView(){
-//        // To register click event to view
-//        findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
-//    }
+    private void initView(){
+        // To register click event to view
+        findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+    }
 
     // This onClick method is overridden from "View.OnClickListener".
     @Override
     public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.btn_process_3:
-//                greet();
-//                break;
-//        }
-//        hideKeyboardInput(v);
+        switch (v.getId()) {
+            case R.id.btn_process_3:
+                greet();
+                break;
+        }
+        hideKeyboardInput(v);
     }
 
     // To greet the user
@@ -61,13 +58,4 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    public void onNextButtonClick(View view) {
-        intent = new Intent(this, Option4Activity.class);
-        startActivity(intent);
-    }
-
-    public void onBackButtonClick(View view) {
-        intent = new Intent(this, Option2Activity.class);
-        startActivity(intent);
-    }
 }

@@ -1,7 +1,6 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,14 +15,12 @@ public class Option5Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
 
-    private Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option5);
         bindView();
-//        initView();
+        initView();
     }
 
     // To bind views to this activity
@@ -32,34 +29,24 @@ public class Option5Activity extends AppCompatActivity {
         tvOutput = findViewById(R.id.tv_body_5);
     }
 
-//    private void initView(){
-//        // To register click event to view
-//        findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
-//    }
-
-    public void onNextButtonClick(View view) {
-        intent = new Intent(this, Option0Activity.class);
-        startActivity(intent);
-    }
-
-    public void onBackButtonClick(View view) {
-        intent = new Intent(this, Option4Activity.class);
-        startActivity(intent);
+    private void initView(){
+        // To register click event to view
+        findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
     // It is private from other android class since it is within the Activity.
-//    class InnerOnClickListener implements View.OnClickListener{
-//        @Override
-//        public void onClick(View v) {
-//            switch (v.getId()) {
-//                case R.id.btn_process_5:
-//                    greet();
-//                    break;
-//            }
-//            hideKeyboardInput(v);
-//        }
-//    }
+    class InnerOnClickListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_process_5:
+                    greet();
+                    break;
+            }
+            hideKeyboardInput(v);
+        }
+    }
 
     // To greet the user
     private void greet(){

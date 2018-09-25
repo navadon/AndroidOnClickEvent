@@ -1,7 +1,6 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +16,6 @@ public class Option0Activity extends AppCompatActivity {
     private TextView tvOutput;
     private Button btnProcess;
 
-    private Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +26,7 @@ public class Option0Activity extends AppCompatActivity {
     private void bindView() {
         etInput = findViewById(R.id.et_input_0);
         tvOutput = findViewById(R.id.tv_body_0);
-//        btnProcess = findViewById(R.id.btn_process_0);
+        btnProcess = findViewById(R.id.btn_process_0);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -42,23 +39,13 @@ public class Option0Activity extends AppCompatActivity {
     }
 
     // To greet the user
-    private void greet() {
+    private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
 
     // To hide Android soft keyboard
-    private void hideKeyboardInput(View v) {
+    private void hideKeyboardInput(View v){
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-    }
-
-    public void onNextButtonClick(View view) {
-        intent = new Intent(this, Option1Activity.class);
-        startActivity(intent);
-    }
-
-    public void onBackButtonClick(View view) {
-        intent = new Intent(this, Option5Activity.class);
-        startActivity(intent);
     }
 }

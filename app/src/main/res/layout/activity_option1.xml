@@ -26,19 +26,11 @@
         android:layout_marginBottom="@dimen/small_spacing" />
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_process_1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/touch_target_size"
-        android:onClick="onNextButtonClick"
-        android:text="@string/nxt"
-        android:layout_marginBottom="@dimen/small_spacing" />
-
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/touch_target_size"
-        android:onClick="onBackButtonClick"
-        android:text="@string/bck"
+        android:onClick="process"
+        android:text="@string/process"
         android:layout_marginBottom="@dimen/small_spacing" />
 
     <TextView

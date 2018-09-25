@@ -1,7 +1,6 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,14 +14,12 @@ public class Option2Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
 
-    private Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option2);
         bindView();
-//        initView();
+        initView();
     }
 
     private void bindView() {
@@ -33,15 +30,15 @@ public class Option2Activity extends AppCompatActivity {
     // To set onClickListener to "each" view (and use anonymous OnClickListener individually)
     // You don't have to bind any function to "android:onClick" in layout XML file.
     // However, this will cause adding too many instructions to activity's "onCreate" method.
-//    private void initView(){
-//        findViewById(R.id.btn_process_2).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                greet();
-//                hideKeyboardInput(v);
-//            }
-//        });
-//    }
+    private void initView(){
+        findViewById(R.id.btn_process_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                greet();
+                hideKeyboardInput(v);
+            }
+        });
+    }
 
     // To greet the user
     private void greet(){
@@ -52,15 +49,5 @@ public class Option2Activity extends AppCompatActivity {
     private void hideKeyboardInput(View v){
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-    }
-
-    public void onNextButtonClick(View view) {
-        intent = new Intent(this, Option3Activity.class);
-        startActivity(intent);
-    }
-
-    public void onBackButtonClick(View view) {
-        intent = new Intent(this, Option1Activity.class);
-        startActivity(intent);
     }
 }
