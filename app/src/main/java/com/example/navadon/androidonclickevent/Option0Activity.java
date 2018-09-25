@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ public class Option0Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private Button btnProcess;
+    private Button btnNext;
+    private Button btnPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class Option0Activity extends AppCompatActivity {
         etInput = findViewById(R.id.et_input_0);
         tvOutput = findViewById(R.id.tv_body_0);
         btnProcess = findViewById(R.id.btn_process_0);
+        btnNext = findViewById(R.id.btn_next);
+        btnPrev = findViewById(R.id.btn_prev);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -35,6 +40,17 @@ public class Option0Activity extends AppCompatActivity {
         if (v == btnProcess) {
             greet();
         }
+
+        if ( v == btnNext){
+            Intent intent = new Intent(this,Option1Activity.class);
+            startActivity(intent);
+        }
+
+        if (v == btnPrev){
+            Intent intent = new Intent(this,Option5Activity.class);
+            startActivity(intent);
+        }
+
         hideKeyboardInput(v);
     }
 

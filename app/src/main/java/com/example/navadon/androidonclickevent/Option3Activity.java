@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,6 +17,9 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private EditText etInput;
     private TextView tvOutput;
+    private Intent intent;
+    private Button btnNext;
+    private Button btnPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_next).setOnClickListener(this);
+        findViewById(R.id.btn_prev).setOnClickListener(this);
     }
 
     // This onClick method is overridden from "View.OnClickListener".
@@ -41,6 +48,14 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.btn_next:
+                intent = new Intent(this,Option4Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_prev:
+                intent = new Intent(this,Option2Activity.class);
+                startActivity(intent);
                 break;
         }
         hideKeyboardInput(v);
