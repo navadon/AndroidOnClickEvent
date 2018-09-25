@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,8 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_back_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_next_5).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -43,6 +46,12 @@ public class Option5Activity extends AppCompatActivity {
                 case R.id.btn_process_5:
                     greet();
                     break;
+                case R.id.btn_back_5:
+                    back();
+                    break;
+                case R.id.btn_next_5:
+                    next();
+                    break;
             }
             hideKeyboardInput(v);
         }
@@ -51,6 +60,13 @@ public class Option5Activity extends AppCompatActivity {
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+    private void back(){
+        startActivity(new Intent(getApplicationContext(),Option4Activity.class));
+    }
+    private void next(){
+        startActivity(new Intent(getApplicationContext(),Option0Activity.class));
+
     }
 
     // To hide Android soft keyboard
