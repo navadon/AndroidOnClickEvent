@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +16,9 @@ public class Option5Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
+    private Intent intent;
+    private Button btnNext;
+    private Button btnPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,8 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_prev).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_next).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -43,11 +50,31 @@ public class Option5Activity extends AppCompatActivity {
                 case R.id.btn_process_5:
                     greet();
                     break;
+                case R.id.btn_next:
+                    next(Option0Activity.class);
+                    break;
+                case R.id.btn_prev:
+                    prev(Option4Activity.class);
+                    break;
             }
             hideKeyboardInput(v);
         }
     }
+    private void next(Class next){
+        Intent intent = new Intent(this,next);
+        startActivity(intent);
 
+
+    }
+
+    private  void prev(Class prev){
+        Intent intent = new Intent(this,prev);
+        startActivity(intent);
+
+
+
+
+    }
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
