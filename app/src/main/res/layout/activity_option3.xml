@@ -43,4 +43,18 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
 
+    <Button
+        android:id="@+id/act0N"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:text="@string/next"
+        android:layout_marginBottom="@dimen/small_spacing" />
+
+    <Button
+        android:id="@+id/act0B"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:text="@string/back"
+        android:layout_marginBottom="@dimen/small_spacing" />
+
 </LinearLayout>

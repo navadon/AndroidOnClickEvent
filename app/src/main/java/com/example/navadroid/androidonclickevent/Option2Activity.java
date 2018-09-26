@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,11 +42,35 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+        findViewById(R.id.act0N).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextPage();
+                hideKeyboardInput(v);
+            }
+        });
+        findViewById(R.id.act0B).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backPage();
+                hideKeyboardInput(v);
+            }
+        });
     }
 
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+
+    private void nextPage(){
+        Intent next = new Intent(this,Option3Activity.class);
+        startActivity(next);
+    }
+
+    private void backPage(){
+        Intent back = new Intent(this,Option1Activity.class);
+        startActivity(back);
     }
 
     // To hide Android soft keyboard
