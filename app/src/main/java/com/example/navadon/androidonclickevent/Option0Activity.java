@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 // TODO: XML onClick attribute and selecting view by comparing object
 public class Option0Activity extends AppCompatActivity {
@@ -15,6 +16,8 @@ public class Option0Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private Button btnProcess;
+    private  Button btnNext;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class Option0Activity extends AppCompatActivity {
         etInput = findViewById(R.id.et_input_0);
         tvOutput = findViewById(R.id.tv_body_0);
         btnProcess = findViewById(R.id.btn_process_0);
+        btnNext=findViewById(R.id.next);
+       btnBack=findViewById(R.id.back);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -37,6 +42,24 @@ public class Option0Activity extends AppCompatActivity {
         }
         hideKeyboardInput(v);
     }
+
+    public void next(View v) {
+        // Do we really need to compare view objects?
+        if (v == btnNext) {
+            Intent intent = new Intent(this, Option1Activity.class);
+            startActivity(intent);
+        }
+
+    }
+
+    public void back(View v) {
+        // Do we really need to compare view objects?
+        if (v == btnBack) {
+        Intent intent = new Intent(this, Option5Activity.class);
+        startActivity(intent);
+
+    }}
+
 
     // To greet the user
     private void greet(){

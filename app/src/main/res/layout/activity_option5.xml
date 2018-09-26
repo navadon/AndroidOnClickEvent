@@ -25,6 +25,24 @@
         android:hint="@string/et_input_hint"
         android:layout_marginBottom="@dimen/small_spacing" />
 
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:onClick="next"/>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:onClick="back"
+        />
+
+
+    
     <Button
         android:id="@+id/btn_process_5"
         android:layout_width="match_parent"
