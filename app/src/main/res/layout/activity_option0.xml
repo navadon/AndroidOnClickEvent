@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.navadroid.androidonclickevent.Option1Activity"
+    tools:context="com.example.navadroid.androidonclickevent.Option0Activity"
     android:orientation="vertical"
     android:padding="@dimen/large_spacing">
 
@@ -37,11 +37,36 @@
     <TextView
         android:id="@+id/tv_body_0"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
+        android:background="@color/colorAccent"
         android:gravity="center"
         android:text="@string/tv_output_init"
-        android:textAppearance="@style/text_title"
-        android:background="@color/colorAccent"/>
+        android:textAppearance="@style/text_title" />
 
-</LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_prev_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prev"
+        android:onClick="process"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_next_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:onClick="process"
+        android:layout_gravity="center"
+        />
+    </LinearLayout>
+
+
+
+
+
+

@@ -42,5 +42,20 @@
         android:text="@string/tv_output_init"
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
+    <Button
+        android:id="@+id/btn_prev_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prev"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_next_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:layout_gravity="center"
+        />
 
 </LinearLayout>
