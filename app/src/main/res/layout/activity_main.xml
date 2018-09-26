@@ -14,5 +14,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/Start_btn"
+        android:layout_width="200px"
+        android:layout_height="100px"
+        android:text="Start"/>
 
 </android.support.constraint.ConstraintLayout>
