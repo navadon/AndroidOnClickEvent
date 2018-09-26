@@ -1,10 +1,12 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,6 +17,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private EditText etInput;
     private TextView tvOutput;
+    private Button backBtn;
+    private Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +32,15 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void bindView(){
         etInput = findViewById(R.id.et_input_3);
         tvOutput = findViewById(R.id.tv_body_3);
+        backBtn = findViewById(R.id.back3);
+        nextBtn = findViewById(R.id.next3);
     }
 
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.back3).setOnClickListener(this);
+        findViewById(R.id.next3).setOnClickListener(this);
     }
 
     // This onClick method is overridden from "View.OnClickListener".
@@ -41,6 +49,14 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.back3:
+                Intent intent1 = new Intent(this,Option2Activity.class);
+                startActivity(intent1);
+                break;
+            case R.id.next3:
+                Intent intent2 = new Intent(this,Option4Activity.class);
+                startActivity(intent2);
                 break;
         }
         hideKeyboardInput(v);
@@ -56,6 +72,4 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
-
-
 }

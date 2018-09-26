@@ -1,18 +1,21 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 // TODO: setOnClickListener to each view (use anonymous object of OnClickListener)
 public class Option2Activity extends AppCompatActivity {
-
     private EditText etInput;
     private TextView tvOutput;
+    private Button backBtn;
+    private Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +28,15 @@ public class Option2Activity extends AppCompatActivity {
     private void bindView() {
         etInput = findViewById(R.id.et_input_2);
         tvOutput = findViewById(R.id.tv_body_2);
+        backBtn = findViewById(R.id.back2);
+        nextBtn = findViewById(R.id.next2);
     }
 
     // To set onClickListener to "each" view (and use anonymous OnClickListener individually)
     // You don't have to bind any function to "android:onClick" in layout XML file.
     // However, this will cause adding too many instructions to activity's "onCreate" method.
     private void initView(){
+
         findViewById(R.id.btn_process_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +44,23 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+
+        findViewById(R.id.back2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Option1Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.next2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Option3Activity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     // To greet the user
