@@ -41,5 +41,17 @@
         android:text="@string/tv_output_init"
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
+    <Button
+        android:id="@+id/btnNext"
+        android:onClick="process"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+    <Button
+        android:id="@+id/btnBack"
+        android:onClick="process"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 
 </LinearLayout>

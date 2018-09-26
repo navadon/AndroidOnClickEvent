@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,12 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_process_1) {
             greet();
         }
+        if(v.getId() == R.id.btnNext){
+            toNext();
+        }
+        if(v.getId() == R.id.btnBack){
+            toBack();
+        }
         hideKeyboardInput(v);
     }
 
@@ -38,6 +45,14 @@ public class Option1Activity extends AppCompatActivity {
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
+
+    private void toNext(){
+        startActivity(new Intent(this, Option2Activity.class));
+    }
+    private  void toBack(){
+        startActivity(new Intent(this, Option0Activity.class));
+    }
+
 
     // To hide Android soft keyboard
     private void hideKeyboardInput(View v){
