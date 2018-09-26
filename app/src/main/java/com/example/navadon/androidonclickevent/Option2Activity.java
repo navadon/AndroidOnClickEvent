@@ -44,7 +44,6 @@ public class Option2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Option2Activity.this, Option3Activity.class);
                 startActivity(intent);
-                hideKeyboardInput(v);
             }
         });
         findViewById(R.id.btn_back2).setOnClickListener(new View.OnClickListener() {
@@ -52,7 +51,6 @@ public class Option2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Option2Activity.this, Option1Activity.class);
                 startActivity(intent);
-                hideKeyboardInput(v);
             }
         });
     }
