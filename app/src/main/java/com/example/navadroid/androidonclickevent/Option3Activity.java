@@ -1,6 +1,7 @@
-package com.example.navadroid.androidonclickevent;
+package com.example.kimbum.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: Implementing View.OnClickListener
-// This activity is implementing "View.OnClickListener" interface, so "onClick" method must be overridden.
-public class Option3Activity extends AppCompatActivity implements View.OnClickListener {
+public class Option3Activity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_option3);/
+    }
     private EditText etInput;
     private TextView tvOutput;
 
@@ -31,8 +35,23 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_process_3:
                 greet();
                 break;
+            case R.id.btn_back:
+                Back();
+                break;
+            case R.id.btn_next:
+                Next();
+                break;
         }
         hideKeyboardInput(v);
+    }
+
+    private void Back() {
+        Intent i  = new Intent(getApplicationContext(), com.example.kimbum.androidonclickevent.Option2Activity.class);
+        startActivity(i);
+    }
+    private void Next() {
+        Intent i  = new Intent(getApplicationContext(), Option4Activity.class);
+        startActivity(i);
     }
 
     // To bind views to this activity
@@ -43,7 +62,9 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private void initView(){
         // To register click event to view
-        findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_process_3).setOnClickListener(this);
+        findViewById(R.id.btn_back).setOnClickListener(this);
+        findViewById(R.id.btn_next).setOnClickListener(this);// Think about... Who is "this"?
     }
 
     // To greet the user
@@ -57,5 +78,3 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 }
-
-

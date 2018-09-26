@@ -1,28 +1,27 @@
-package com.example.navadroid.androidonclickevent;
+package com.example.kimbum.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: setOnClickListener to each view
 public class Option2Activity extends AppCompatActivity {
-
-    private EditText etInput;
-    private TextView tvOutput;
-//    private Button btnProcess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option2);
-        bindView();
-        initView();
     }
+    private EditText etInput;
+    private TextView tvOutput;
+//    private Button btnProcess;
+
+
+
 
     // To bind views to this activity
     private void bindView(){
@@ -41,6 +40,29 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+        findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Next();
+                hideKeyboardInput(v);
+            }
+        });
+        findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Back();
+                hideKeyboardInput(v);
+            }
+        });
+    }
+
+    private void Next() {
+        Intent i  = new Intent(getApplicationContext(), Option3Activity.class);
+        startActivity(i);
+    }
+    private void Back() {
+        Intent i  = new Intent(getApplicationContext(), com.example.kimbum.androidonclickevent.Option1Activity.class);
+        startActivity(i);
     }
 
     // To greet the user
@@ -54,4 +76,3 @@ public class Option2Activity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 }
-
