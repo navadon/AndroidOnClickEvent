@@ -43,5 +43,27 @@
         android:text="@string/tv_output_init"
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        >
+        <Button
+            android:id="@+id/Prev_btn_process_5"
+            android:layout_width="200px"
+            android:layout_height="100px"
+            android:text="Prev"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            />
+        <Button
+            android:id="@+id/Next_btn_process_1"
+            android:layout_width="200px"
+            android:layout_height="100px"
+            android:text="Next"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
