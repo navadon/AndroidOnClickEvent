@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 // TODO: XML onClick attribute & View id
 public class Option1Activity extends AppCompatActivity {
@@ -32,6 +34,15 @@ public class Option1Activity extends AppCompatActivity {
     public void process(View v) {
         if(v.getId() == R.id.btn_process_1) {
             greet();
+        }
+      else if(v.getId()==R.id.btn_next1){
+            Intent intent2=new Intent(this, Option2Activity.class);
+            startActivity(intent2);
+
+        }else if(v.getId()==R.id.btn_back1){
+            Intent intent2=new Intent(this,Option0Activity.class);
+            startActivity(intent2);
+
         }
         hideKeyboardInput(v);
     }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 // TODO: View.OnClickListener as inner class
 public class Option5Activity extends AppCompatActivity {
@@ -31,6 +32,8 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_next5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_back5).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -42,6 +45,12 @@ public class Option5Activity extends AppCompatActivity {
                 case R.id.btn_process_5:
                     greet();
                     break;
+                case R.id.btn_next5:
+                    Next();
+                    break;
+                case R.id.btn_back5:
+                    Back();
+                    break;
             }
             hideKeyboardInput(v);
         }
@@ -50,6 +59,16 @@ public class Option5Activity extends AppCompatActivity {
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
+    }
+    private void Next(){
+        Intent intent=new Intent(this,Option0Activity.class);
+        startActivity(intent);
+        finish();
+    }
+    private void Back(){
+        Intent intent=new Intent(this,Option4Activity.class);
+        startActivity(intent);
+        finish();
     }
 
     // To hide Android soft keyboard

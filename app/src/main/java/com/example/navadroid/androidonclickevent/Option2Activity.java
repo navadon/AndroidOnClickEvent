@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 // TODO: setOnClickListener to each view
 public class Option2Activity extends AppCompatActivity {
@@ -41,12 +42,42 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+        findViewById(R.id.btn_next2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Next();
+            }
+
+        });
+        findViewById(R.id.btn_back2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Back();
+
+
+            }
+        });
+
+
+
     }
 
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
+    private void Next(){
+        Intent i;
+        i=new Intent(this,Option3Activity.class);
+        startActivity(i);
+
+    }
+    private void Back(){
+        Intent i;
+        i=new Intent(this,Option1Activity.class);
+        startActivity(i);
+    }
+
 
     // To hide Android soft keyboard
     private void hideKeyboardInput(View v){

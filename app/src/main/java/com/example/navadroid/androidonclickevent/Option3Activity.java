@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 // TODO: Implementing View.OnClickListener
 // This activity is implementing "View.OnClickListener" interface, so "onClick" method must be overridden.
@@ -31,7 +32,16 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_process_3:
                 greet();
                 break;
+            case R.id.btn_next3:
+            Intent intent3=new Intent(this,Option4Activity.class);
+            startActivity(intent3);
+            break;
+            case R.id.btn_back3:
+            Intent intent4 = new Intent(this,Option2Activity.class);
+            startActivity(intent4);
+            break;
         }
+
         hideKeyboardInput(v);
     }
 
@@ -44,12 +54,15 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_next3).setOnClickListener(this);
+        findViewById(R.id.btn_back3).setOnClickListener(this);
     }
 
     // To greet the user
     private void greet(){
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
+
 
     // To hide Android soft keyboard
     private void hideKeyboardInput(View v){
