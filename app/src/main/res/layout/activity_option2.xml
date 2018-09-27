@@ -49,15 +49,13 @@ android:padding="@dimen/large_spacing">
             android:id="@+id/back"
             android:layout_width="173dp"
             android:layout_height="wrap_content"
-            android:text="@string/back"
-            android:onClick="onClickBack" />
+            android:text="@string/back" />
 
         <Button
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next"
-            android:onClick="onClickNext"
             android:layout_toEndOf="@+id/back"/>
     </RelativeLayout>
 
