@@ -1,10 +1,12 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -24,19 +26,21 @@ public class Option4Activity extends AppCompatActivity {
     }
 
     // To bind views to this activity
-    private void bindView(){
+    private void bindView() {
         etInput = (EditText) findViewById(R.id.et_input_4);
         tvOutput = (TextView) findViewById(R.id.tv_body_4);
     }
 
-    private void initView(){
+    private void initView() {
         initOnClickListener();
         // To register click event to view
         findViewById(R.id.btn_process_4).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_next).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_back).setOnClickListener(onClickListener);
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
-    private void initOnClickListener(){
+    private void initOnClickListener() {
         onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,19 +48,35 @@ public class Option4Activity extends AppCompatActivity {
                     case R.id.btn_process_4:
                         greet();
                         break;
+                    case R.id.btn_next:
+                        next();
+                        break;
+                    case R.id.btn_back:
+                        prev();
+                        break;
                 }
                 hideKeyboardInput(v);
             }
         };
     }
 
+    private void next(){
+        Intent intent = new Intent(Option4Activity.this, Option5Activity.class);
+        startActivity(intent);
+    }
+
+    private void prev(){
+        Intent intent = new Intent(Option4Activity.this, Option3Activity.class);
+        startActivity(intent);
+    }
+
     // To greet the user
-    private void greet(){
+    private void greet() {
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
 
     // To hide Android soft keyboard
-    private void hideKeyboardInput(View v){
+    private void hideKeyboardInput(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }

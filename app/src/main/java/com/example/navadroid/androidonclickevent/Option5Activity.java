@@ -1,10 +1,12 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -31,6 +33,8 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_next).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_back).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -42,9 +46,25 @@ public class Option5Activity extends AppCompatActivity {
                 case R.id.btn_process_5:
                     greet();
                     break;
+                case R.id.btn_next:
+                    next();
+                    break;
+                case R.id.btn_back:
+                    prev();
+                    break;
             }
             hideKeyboardInput(v);
         }
+    }
+
+    private void next(){
+        Intent intent = new Intent(Option5Activity.this, Option0Activity.class);
+        startActivity(intent);
+    }
+
+    private void prev(){
+        Intent intent = new Intent(Option5Activity.this, Option4Activity.class);
+        startActivity(intent);
     }
 
     // To greet the user

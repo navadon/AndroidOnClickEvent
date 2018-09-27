@@ -1,47 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.navadroid.androidonclickevent.Option1Activity"
     android:orientation="vertical"
-    android:padding="@dimen/large_spacing">
+    android:padding="@dimen/large_spacing"
+    tools:context="com.example.navadroid.androidonclickevent.Option1Activity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_spacing"
         android:gravity="center"
         android:text="0"
-        android:textAppearance="@style/text_title"
-        android:layout_marginBottom="@dimen/small_spacing"/>
+        android:textAppearance="@style/text_title" />
 
     <EditText
         android:id="@+id/et_input_0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:hint="@string/et_input_hint"
         android:inputType="text"
         android:text=""
-        tools:ignore="LabelFor"
-        android:hint="@string/et_input_hint"
-        android:layout_marginBottom="@dimen/small_spacing" />
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/btn_process_0"
         android:layout_width="match_parent"
         android:layout_height="@dimen/touch_target_size"
+        android:layout_marginBottom="@dimen/small_spacing"
         android:onClick="process"
-        android:text="@string/process"
-        android:layout_marginBottom="@dimen/small_spacing" />
+        android:text="@string/process" />
 
     <TextView
         android:id="@+id/tv_body_0"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/colorAccent"
         android:gravity="center"
         android:text="@string/tv_output_init"
-        android:textAppearance="@style/text_title"
-        android:background="@color/colorAccent"/>
+        android:textAppearance="@style/text_title" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="process"
+            android:text="Back"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_toRightOf="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="process"
+            android:text="Next" />
+    </RelativeLayout>
 
 </LinearLayout>
