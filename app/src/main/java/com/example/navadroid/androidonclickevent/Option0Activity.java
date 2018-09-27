@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,10 @@ public class Option0Activity extends AppCompatActivity {
     private TextView tvOutput;
     private Button btnProcess;
 
+
+    private Button btn_next;
+    private Button btn_back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,8 @@ public class Option0Activity extends AppCompatActivity {
         etInput = (EditText) findViewById(R.id.et_input_0);
         tvOutput = (TextView) findViewById(R.id.tv_body_0);
         btnProcess = (Button) findViewById(R.id.btn_process_0);
+        btn_back = (Button) findViewById(R.id.btn_back);
+        btn_next = (Button) findViewById(R.id.btn_next);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -35,6 +42,11 @@ public class Option0Activity extends AppCompatActivity {
         // Do we really need to compare view objects?
         if (v == btnProcess) {
             greet();
+        }else if(v == btn_back){
+            Back();
+        }
+        else if(v == btn_next){
+            Next();
         }
         hideKeyboardInput(v);
     }
@@ -49,4 +61,15 @@ public class Option0Activity extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
+
+    private void Next(){
+        Intent intentNext = new Intent(this,Option1Activity.class);
+        startActivity(intentNext);
+    }
+
+    private void Back(){
+        Intent intentNext = new Intent(this,MainActivity.class);
+        startActivity(intentNext);
+    }
+
 }

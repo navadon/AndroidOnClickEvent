@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_process_3:
                 greet();
                 break;
+            case R.id.btn_back:
+                Back();
+                break;
+            case R.id.btn_next:
+                Next();
+                break;
         }
         hideKeyboardInput(v);
     }
@@ -44,6 +51,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_back).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_next).setOnClickListener(this); // Think about... Who is "this"?
     }
 
     // To greet the user
@@ -55,6 +64,16 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void hideKeyboardInput(View v){
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
+
+    private void Next(){
+        Intent intentNext = new Intent(this,Option4Activity.class);
+        startActivity(intentNext);
+    }
+
+    private void Back(){
+        Intent intentNext = new Intent(this,Option2Activity.class);
+        startActivity(intentNext);
     }
 }
 

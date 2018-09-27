@@ -44,4 +44,18 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent" />
 
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="process"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="process"
+        android:text="Next" />
+
 </LinearLayout>
