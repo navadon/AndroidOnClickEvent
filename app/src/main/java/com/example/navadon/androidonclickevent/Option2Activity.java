@@ -1,6 +1,7 @@
 package com.example.navadon.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 // TODO: setOnClickListener to each view (use anonymous object of OnClickListener)
-public class Option2Activity extends AppCompatActivity {
+public class  Option2Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
@@ -38,6 +39,28 @@ public class Option2Activity extends AppCompatActivity {
                 hideKeyboardInput(v);
             }
         });
+        findViewById(R.id.btn_back_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
+        findViewById(R.id.btn_next_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                next();
+            }
+        });
+    }
+
+    private void back (){
+        startActivity(new Intent(this, Option1Activity.class));
+        finish();
+    }
+
+    private void next (){
+        startActivity(new Intent(this, Option3Activity.class));
+        finish();
     }
 
     // To greet the user
