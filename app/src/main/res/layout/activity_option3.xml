@@ -33,6 +33,18 @@
         android:text="@string/process"
         android:layout_marginBottom="@dimen/small_spacing" />
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACK TO PAGE 2" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT TO PAGE 4" />
+
     <TextView
         android:id="@+id/tv_body_3"
         android:layout_width="match_parent"

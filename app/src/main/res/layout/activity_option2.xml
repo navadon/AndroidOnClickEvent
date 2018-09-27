@@ -33,7 +33,19 @@ android:padding="@dimen/large_spacing">
     android:text="@string/process"
     android:layout_marginBottom="@dimen/small_spacing" />
 
-<TextView
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACK TO PAGE 1" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT TO PAGE 3" />
+
+    <TextView
     android:id="@+id/tv_body_2"
     android:layout_width="match_parent"
     android:layout_height="0dp"

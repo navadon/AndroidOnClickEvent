@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,9 +13,12 @@ import android.widget.TextView;
 // TODO: XML onClick attribute & View object
 public class Option0Activity extends AppCompatActivity {
 
+
     private EditText etInput;
     private TextView tvOutput;
     private Button btnProcess;
+    private Button buttonBack;
+    private Button buttonNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ public class Option0Activity extends AppCompatActivity {
         etInput = (EditText) findViewById(R.id.et_input_0);
         tvOutput = (TextView) findViewById(R.id.tv_body_0);
         btnProcess = (Button) findViewById(R.id.btn_process_0);
+        buttonBack = (Button)findViewByID(R.id.button);
+        buttonNext = (Button) findViewByID(R.id.button2);
+
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -36,13 +43,35 @@ public class Option0Activity extends AppCompatActivity {
         if (v == btnProcess) {
             greet();
         }
+        else if(v == buttonBack)
+        {
+            back();
+
+        }
+        else if (v == buttonNext)
+        {
+            next();
+        }
         hideKeyboardInput(v);
     }
 
     // To greet the user
-    private void greet(){
+    private void greet()
+    {
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
+
+    private void back()
+    {
+        Intent i = new Intent(getApplicationContext(),Option5Activity.class);
+        startActivity(i);
+    }
+    private void next()
+    {
+        Intent i = new Intent(getApplicationContext(),Option1Activity.class);
+        startActivity(i);
+    }
+
 
     // To hide Android soft keyboard
     private void hideKeyboardInput(View v){

@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,11 +34,30 @@ public class Option1Activity extends AppCompatActivity {
         if(v.getId() == R.id.btn_process_1) {
             greet();
         }
+        else if(v.getId()==R.id.button3)
+        {
+            back();
+        }
+        else if(v.getId() == R.id.button4)
+        {
+            next();
+        }
         hideKeyboardInput(v);
     }
 
     // To greet the user
-    private void greet(){
+    private void back()
+    {
+        Intent i1 = new Intent(getApplicationContext(),Option0Activity.class);
+        startActivity(i1);
+    }
+    private void next()
+    {
+        Intent i1 = new Intent(getApplicationContext(),Option2Activity.class);
+        startActivity(i1);
+    }
+    private void greet()
+    {
         tvOutput.setText(getString(R.string.greeting) + " " + etInput.getText().toString());
     }
 
