@@ -17,8 +17,6 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button backBtn;
-    private Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +30,7 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void bindView(){
         etInput = findViewById(R.id.et_input_3);
         tvOutput = findViewById(R.id.tv_body_3);
-        backBtn = findViewById(R.id.back3);
-        nextBtn = findViewById(R.id.next3);
+
     }
 
     private void initView(){

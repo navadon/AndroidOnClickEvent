@@ -16,8 +16,6 @@ public class Option4Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private View.OnClickListener onClickListener;
-    private Button backBtn;
-    private Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +28,7 @@ public class Option4Activity extends AppCompatActivity {
     private void bindView() {
         etInput = findViewById(R.id.et_input_4);
         tvOutput = findViewById(R.id.tv_body_4);
-        backBtn = findViewById(R.id.back4);
-        nextBtn = findViewById(R.id.next4);
+
     }
 
     private void initView(){

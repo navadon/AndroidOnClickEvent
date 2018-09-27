@@ -14,8 +14,7 @@ import android.widget.TextView;
 public class Option2Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
-    private Button backBtn;
-    private Button nextBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +27,7 @@ public class Option2Activity extends AppCompatActivity {
     private void bindView() {
         etInput = findViewById(R.id.et_input_2);
         tvOutput = findViewById(R.id.tv_body_2);
-        backBtn = findViewById(R.id.back2);
-        nextBtn = findViewById(R.id.next2);
+
     }
 
     // To set onClickListener to "each" view (and use anonymous OnClickListener individually)
