@@ -15,7 +15,6 @@ public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
-    public Button prev1,next1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +27,6 @@ public class Option1Activity extends AppCompatActivity {
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_1);
         tvOutput = (TextView) findViewById(R.id.tv_body_1);
-        prev1 = (Button) findViewById(R.id.btn_prev_1);
-        next1 = (Button) findViewById(R.id.btn_next_1);
 
     }
 
