@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +15,42 @@ public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
+    Button next;
+    Button previous;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option1);
         bindView();
+
+        next = (Button) findViewById(R.id.next);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickNext();
+            }
+        });
+
+        previous = (Button) findViewById(R.id.previous);
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickPrevious();
+            }
+        });
+    }
+
+    public void onClickNext(){
+        Intent it = new Intent(this, Option2Activity.class);
+        startActivity(it);
+    }
+
+    public void onClickPrevious(){
+        Intent it = new Intent(this, Option0Activity.class);
+        startActivity(it);
     }
 
     // To bind views to this activity
