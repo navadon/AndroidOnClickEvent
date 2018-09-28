@@ -12,6 +12,7 @@ import android.widget.TextView;
 // TODO: XML onClick attribute and selecting view by comparing object
 public class Option0Activity extends AppCompatActivity {
 
+    int i;
     private EditText etInput;
     private TextView tvOutput;
     private Button btnProcess;
