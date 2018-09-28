@@ -1,18 +1,23 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: Using XML onClick attribute and selecting view via id
+// TODO: XML onClick attribute & View id
 public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
+    private Button btnProcess;
+    private Button btnNext;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +26,28 @@ public class Option1Activity extends AppCompatActivity {
         bindView();
     }
 
-    private void bindView() {
-        etInput = findViewById(R.id.et_input_1);
-        tvOutput = findViewById(R.id.tv_body_1);
+    // To bind views to this activity
+    private void bindView(){
+        etInput = (EditText) findViewById(R.id.et_input_1);
+        tvOutput = (TextView) findViewById(R.id.tv_body_1);
+        btnProcess = (Button) findViewById(R.id.btn_process_1);
+        btnNext = (Button) findViewById(R.id.btn_next_1);
+        btnBack = (Button) findViewById(R.id.btn_back_1);
+
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
     public void process(View v) {
         if(v.getId() == R.id.btn_process_1) {
             greet();
+        }
+        if (v== btnBack){
+            Intent intent = new Intent(this, Option0Activity.class);
+            startActivity(intent);
+        }
+        if (v== btnNext){
+            Intent intent = new Intent(this, Option2Activity.class);
+            startActivity(intent);
         }
         hideKeyboardInput(v);
     }

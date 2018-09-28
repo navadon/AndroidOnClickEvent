@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.example.navadroid.androidonclickevent.Option1Activity"
     android:orientation="vertical"
     android:padding="@dimen/large_spacing">
 
@@ -31,6 +32,20 @@
         android:layout_height="@dimen/touch_target_size"
         android:onClick="process"
         android:text="@string/process"
+        android:layout_marginBottom="@dimen/small_spacing" />
+    <Button
+        android:id="@+id/btn_next_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:onClick="process"
+        android:text="@string/next"
+        android:layout_marginBottom="@dimen/small_spacing" />
+    <Button
+        android:id="@+id/btn_back_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/touch_target_size"
+        android:onClick="process"
+        android:text="@string/back"
         android:layout_marginBottom="@dimen/small_spacing" />
 
     <TextView

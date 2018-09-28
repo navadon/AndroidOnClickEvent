@@ -1,6 +1,7 @@
-package com.example.navadon.androidonclickevent;
+package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// TODO: XML onClick attribute and selecting view by comparing object
+// TODO: XML onClick attribute & View object
 public class Option0Activity extends AppCompatActivity {
 
-    int i;
     private EditText etInput;
     private TextView tvOutput;
     private Button btnProcess;
+    private Button btnNext;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +26,16 @@ public class Option0Activity extends AppCompatActivity {
         bindView();
     }
 
-    private void bindView() {
-        etInput = findViewById(R.id.et_input_0);
-        tvOutput = findViewById(R.id.tv_body_0);
-        btnProcess = findViewById(R.id.btn_process_0);
+    // To bind views to this activity
+    private void bindView(){
+        etInput = (EditText) findViewById(R.id.et_input_0);
+        tvOutput = (TextView) findViewById(R.id.tv_body_0);
+        btnProcess = (Button) findViewById(R.id.btn_process_0);
+        btnNext = (Button) findViewById(R.id.btn_next_0);
+        btnBack = (Button) findViewById(R.id.btn_back_0);
+
+
+
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
@@ -35,6 +43,14 @@ public class Option0Activity extends AppCompatActivity {
         // Do we really need to compare view objects?
         if (v == btnProcess) {
             greet();
+        }
+        if (v== btnBack){
+            Intent intent = new Intent(this, Option5Activity.class);
+            startActivity(intent);
+        }
+        if (v== btnNext){
+            Intent intent = new Intent(this, Option1Activity.class);
+            startActivity(intent);
         }
         hideKeyboardInput(v);
     }
