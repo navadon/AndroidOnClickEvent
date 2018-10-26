@@ -16,8 +16,7 @@ public class Option4Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
     private View.OnClickListener onClickListener;
-    private Button btnPrev;
-    private Button btnNext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,18 +25,6 @@ public class Option4Activity extends AppCompatActivity {
         bindView();
         initView();
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NextActivity();
-            }
-        });
-        btnPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PrevActivity();
-            }
-        });
     }
 
     private void NextActivity() {
@@ -52,14 +39,15 @@ public class Option4Activity extends AppCompatActivity {
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_4);
         tvOutput = (TextView) findViewById(R.id.tv_body_4);
-        btnNext = (Button) findViewById(R.id.button_next);
-        btnPrev = (Button) findViewById(R.id.button_prev);
+
     }
 
     private void initView(){
         initOnClickListener();
         // To register click event to view
         findViewById(R.id.btn_process_4).setOnClickListener(onClickListener);
+        findViewById(R.id.button_next).setOnClickListener(onClickListener);
+        findViewById(R.id.button_prev).setOnClickListener(onClickListener);
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
@@ -70,6 +58,12 @@ public class Option4Activity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.btn_process_4:
                         greet();
+                        break;
+                    case R.id.button_next:
+                        NextActivity();
+                        break;
+                    case R.id.button_prev:
+                        PrevActivity();
                         break;
                 }
                 hideKeyboardInput(v);

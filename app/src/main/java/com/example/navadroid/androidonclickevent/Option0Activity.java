@@ -24,19 +24,6 @@ public class Option0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
-
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NextActivity();
-            }
-        });
-        btnPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PrevActivity();
-            }
-        });
     }
 
     private void NextActivity() {
@@ -62,8 +49,31 @@ public class Option0Activity extends AppCompatActivity {
         if (v == btnProcess) {
             greet();
         }
+        else if (v == btnNext) {
+            NextActivity();
+        }
+        else if (v == btnPrev) {
+            PrevActivity();
+        }
         hideKeyboardInput(v);
     }
+    public void prev(View v) {
+        // Do we really need to compare view objects?
+        if (v == btnPrev) {
+            PrevActivity();
+        }
+        hideKeyboardInput(v);
+    }
+
+    public void next(View v) {
+        // Do we really need to compare view objects?
+        if (v == btnNext) {
+            NextActivity();
+        }
+        hideKeyboardInput(v);
+    }
+
+
 
     // To greet the user
     private void greet(){

@@ -16,8 +16,7 @@ public class Option2Activity extends AppCompatActivity {
     private EditText etInput;
     private TextView tvOutput;
 //    private Button btnProcess;
-private Button btnPrev;
-    private Button btnNext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +24,7 @@ private Button btnPrev;
         setContentView(R.layout.activity_option2);
         bindView();
         initView();
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NextActivity();
-            }
-        });
-        btnPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PrevActivity();
-            }
-        });
+
     }
 
     private void NextActivity() {
@@ -51,8 +39,7 @@ private Button btnPrev;
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_2);
         tvOutput = (TextView) findViewById(R.id.tv_body_2);
-        btnNext = (Button) findViewById(R.id.button_next);
-        btnPrev = (Button) findViewById(R.id.button_prev);
+
     }
 
     // To set onClickListener to "each" view
@@ -63,6 +50,20 @@ private Button btnPrev;
             @Override
             public void onClick(View v) {
                 greet();
+                hideKeyboardInput(v);
+            }
+        });
+        findViewById(R.id.button_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NextActivity();
+                hideKeyboardInput(v);
+            }
+        });
+        findViewById(R.id.button_prev).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PrevActivity();
                 hideKeyboardInput(v);
             }
         });

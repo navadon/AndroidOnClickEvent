@@ -16,8 +16,7 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button btnPrev;
-    private Button btnNext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +24,6 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_option3);
         bindView();
         initView();
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NextActivity();
-            }
-        });
-        btnPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PrevActivity();
-            }
-        });
     }
 
     private void NextActivity() {
@@ -55,6 +42,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.btn_process_3:
                 greet();
                 break;
+            case R.id.button_next:
+                NextActivity();
+                break;
+            case R.id.button_prev:
+                PrevActivity();
+                break;
         }
         hideKeyboardInput(v);
     }
@@ -63,13 +56,13 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_3);
         tvOutput = (TextView) findViewById(R.id.tv_body_3);
-        btnNext = (Button) findViewById(R.id.button_next);
-        btnPrev = (Button) findViewById(R.id.button_prev);
     }
 
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.button_next).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.button_prev).setOnClickListener(this); // Think about... Who is "this"?
     }
 
     // To greet the user

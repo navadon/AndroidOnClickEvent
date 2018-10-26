@@ -15,27 +15,14 @@ public class Option1Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button btnPrev;
-    private Button btnNext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option1);
         bindView();
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NextActivity();
-            }
-        });
-        btnPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PrevActivity();
-            }
-        });
-    }
 
+    }
     private void NextActivity() {
         Intent intent = new Intent(this,Option2Activity.class);
         startActivity(intent);
@@ -48,14 +35,18 @@ public class Option1Activity extends AppCompatActivity {
     private void bindView(){
         etInput = (EditText) findViewById(R.id.et_input_1);
         tvOutput = (TextView) findViewById(R.id.tv_body_1);
-        btnNext = (Button) findViewById(R.id.button_next);
-        btnPrev = (Button) findViewById(R.id.button_prev);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
     public void process(View v) {
         if(v.getId() == R.id.btn_process_1) {
             greet();
+        }
+        else if(v.getId() == R.id.button_next) {
+            NextActivity();
+        }
+        else   if(v.getId() == R.id.button_prev) {
+            PrevActivity();
         }
         hideKeyboardInput(v);
     }
