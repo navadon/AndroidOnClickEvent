@@ -26,31 +26,12 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_option3);
         bindView();
         initView();
-        onClick();
-    }
-
-    private void onClick() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Option3Activity.this,Option4Activity.class);
-                startActivity(intent);
-            }
-        });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 
     // To bind views to this activity
     private void bindView(){
         etInput = findViewById(R.id.et_input_3);
         tvOutput = findViewById(R.id.tv_body_3);
-        btnNext = findViewById(R.id.btn_next);
-        btnBack = findViewById(R.id.btn_back);
     }
 
     private void initView(){
@@ -64,6 +45,13 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.btn_next:
+                Intent intent = new Intent(Option3Activity.this,Option4Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_back:
+                finish();
                 break;
         }
         hideKeyboardInput(v);

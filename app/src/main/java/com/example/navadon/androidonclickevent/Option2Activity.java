@@ -15,8 +15,6 @@ public class Option2Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button btnNext;
-    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,30 +22,12 @@ public class Option2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_option2);
         bindView();
         initView();
-        onClick();
     }
 
-    private void onClick() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Option2Activity.this,Option3Activity.class);
-                startActivity(intent);
-            }
-        });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-    }
 
     private void bindView() {
         etInput = findViewById(R.id.et_input_2);
         tvOutput = findViewById(R.id.tv_body_2);
-        btnNext = findViewById(R.id.btn_next);
-        btnBack = findViewById(R.id.btn_back);
     }
 
     // To set onClickListener to "each" view (and use anonymous OnClickListener individually)
@@ -59,6 +39,21 @@ public class Option2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 greet();
                 hideKeyboardInput(v);
+            }
+        });
+
+        (findViewById(R.id.btn_next)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Option2Activity.this,Option3Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        (findViewById(R.id.btn_back)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

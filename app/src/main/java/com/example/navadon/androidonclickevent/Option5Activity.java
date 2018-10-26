@@ -16,45 +16,27 @@ public class Option5Activity extends AppCompatActivity {
 
     private EditText etInput;
     private TextView tvOutput;
-    private Button btnNext;
-    private Button btnBack;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option5);
         bindView();
         initView();
-        onClick();
+
     }
 
-    private void onClick() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Option5Activity.this,Option0Activity.class);
-                startActivity(intent);
-            }
-        });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-    }
 
     // To bind views to this activity
     private void bindView(){
         etInput = findViewById(R.id.et_input_5);
         tvOutput = findViewById(R.id.tv_body_5);
-        btnNext = findViewById(R.id.btn_next);
-        btnBack = findViewById(R.id.btn_back);
     }
 
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_next).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_back).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -65,6 +47,13 @@ public class Option5Activity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.btn_process_5:
                     greet();
+                    break;
+                case R.id.btn_next:
+                    Intent intent = new Intent(Option5Activity.this,Option0Activity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_back:
+                    finish();
                     break;
             }
             hideKeyboardInput(v);

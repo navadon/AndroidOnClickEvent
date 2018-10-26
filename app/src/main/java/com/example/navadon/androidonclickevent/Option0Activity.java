@@ -25,23 +25,6 @@ public class Option0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option0);
         bindView();
-        onClick();
-    }
-
-    private void onClick() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Option0Activity.this,Option1Activity.class);
-                startActivity(intent);
-            }
-        });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 
     private void bindView() {
@@ -57,6 +40,13 @@ public class Option0Activity extends AppCompatActivity {
         // Do we really need to compare view objects?
         if (v == btnProcess) {
             greet();
+        }
+        if (v == btnNext){
+            Intent intent = new Intent(this,Option1Activity.class);
+            startActivity(intent);
+        }
+        if (v == btnBack){
+            finish();
         }
         hideKeyboardInput(v);
     }
