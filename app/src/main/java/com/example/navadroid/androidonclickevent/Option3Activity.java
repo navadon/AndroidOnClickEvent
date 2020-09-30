@@ -37,8 +37,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_3);
-        tvOutput = (TextView) findViewById(R.id.tv_body_3);
+        etInput =  findViewById(R.id.et_input_3);
+        tvOutput = findViewById(R.id.tv_body_3);
     }
 
     private void initView(){
