@@ -1,7 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompact.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
