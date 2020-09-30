@@ -24,8 +24,8 @@ public class Option1Activity extends AppCompatActivity {
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_1);
-        tvOutput = (TextView) findViewById(R.id.tv_body_1);
+        etInput =  findViewById(R.id.et_input_1);
+        tvOutput = findViewById(R.id.tv_body_1);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""
