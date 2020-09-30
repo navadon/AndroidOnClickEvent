@@ -26,8 +26,8 @@ public class Option2Activity extends AppCompatActivity {
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_2);
-        tvOutput = (TextView) findViewById(R.id.tv_body_2);
+        etInput =  findViewById(R.id.et_input_2);
+        tvOutput = findViewById(R.id.tv_body_2);
     }
 
     // To set onClickListener to "each" view
