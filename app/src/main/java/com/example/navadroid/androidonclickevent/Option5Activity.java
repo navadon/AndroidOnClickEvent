@@ -24,8 +24,8 @@ public class Option5Activity extends AppCompatActivity {
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_5);
-        tvOutput = (TextView) findViewById(R.id.tv_body_5);
+        etInput =  findViewById(R.id.et_input_5);
+        tvOutput = findViewById(R.id.tv_body_5);
     }
 
     private void initView(){
