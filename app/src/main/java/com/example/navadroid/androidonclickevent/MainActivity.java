@@ -1,6 +1,6 @@
 package com.example.navadroid.androidonclickevent;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompact.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 

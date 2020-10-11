@@ -1,7 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompact.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -37,8 +37,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_3);
-        tvOutput = (TextView) findViewById(R.id.tv_body_3);
+        etInput =  findViewById(R.id.et_input_3);
+        tvOutput = findViewById(R.id.tv_body_3);
     }
 
     private void initView(){

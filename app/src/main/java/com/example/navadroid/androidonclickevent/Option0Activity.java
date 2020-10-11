@@ -1,7 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompact.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -25,9 +25,9 @@ public class Option0Activity extends AppCompatActivity {
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_0);
-        tvOutput = (TextView) findViewById(R.id.tv_body_0);
-        btnProcess = (Button) findViewById(R.id.btn_process_0);
+        etInput =    findViewById(R.id.et_input_0);
+        tvOutput =   findViewById(R.id.tv_body_0);
+        btnProcess = findViewById(R.id.btn_process_0);
     }
 
     // This "process" method MUST be bound in the layout XML file, "android:onClick="process""

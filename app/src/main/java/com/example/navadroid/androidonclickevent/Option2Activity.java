@@ -1,7 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompact.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -26,8 +26,8 @@ public class Option2Activity extends AppCompatActivity {
 
     // To bind views to this activity
     private void bindView(){
-        etInput = (EditText) findViewById(R.id.et_input_2);
-        tvOutput = (TextView) findViewById(R.id.tv_body_2);
+        etInput =  findViewById(R.id.et_input_2);
+        tvOutput = findViewById(R.id.tv_body_2);
     }
 
     // To set onClickListener to "each" view
